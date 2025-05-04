@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - KGL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+/* Dashboard card styling */
+.dashboard-card {
+    background-color: #28a745 !important; /* Green background */
+    min-height: 180px;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: white; /* Ensure text is readable */
+}
+
+/* Button alignment */
+.dashboard-card a.btn {
+    display: block;
+    text-align: right;
+    margin-top: 1rem;
+}
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <nav class="navbar navbar-expand-lg" style="background-color: #28a745;">
+      <div class="container-fluid">
+          <h2 class="navbar-brand text-white mb-0">Welcome</h2>
+      </div>
+  </nav>
+    <h3>MR ORBAN</h3>
+    <div class="row g-4">
+
+
+      <!-- <a href="{% url 'allsales' %}" class="btn" style="width: 120px; background-color: white; color: black; font-weight: bold; text-align: right;">View Sales</a>
+
+      <a href="{% url 'procurement' %}" class="btn" style="width: 120px; background-color: white; color: black; font-weight: bold; text-align: right;">View Procurement</a>
+      
+      <a href="{% url 'allstock' %}" class="btn" style="width: 120px; background-color: white; color: black; font-weight: bold; text-align: right;">View stock available</a>
+      
+      <a href="{% url 'all_credit' %}" class="btn" style="width: 120px; background-color: white; color: black; font-weight: bold; text-align: right;">View credit sales</a> -->
+
+
+
+
+      <!-- Total Sales -->
+      <div class="col-lg-6">
+        <div class="dashboard-card bg-success text-white">
+          <h5>Total Sales</h5>
+          <p>UGX {{ total_sales }}</p>
+          <a href="{% url 'allsales' %}" class="btn" style="width: 120px; background-color: white; color: black; font-weight: bold; text-align: left;align-items:right;">View Sales</a>
+        </div>
+      </div>
+
+      <!-- Procurements -->
+      <div class="col-lg-6">
+        <div class="dashboard-card bg-success text-white">
+          <h5>Total Procurements</h5>
+          <P>{{total_procurement}}</P>
+          <a href="{% url 'procurement' %}" class="btn" style="width: 200px; background-color: white; color: black; font-weight: bold; text-align: center;">View Procurement</a>
+      
+        </div>
+      </div>
+
+      <!-- In Stock -->
+      <div class="col-lg-6">
+        <div class="dashboard-card bg-success text-white">
+          <h5>In Stock</h5>
+          <P>{{ total_stock|floatformat:0 }}</P>
+          <a href="{% url 'allstock' %}" class="btn" style="width: 200px; background-color: white; color: black; font-weight: bold; text-align: center;">View stock available</a>
+      
+        </div>
+      </div>
+
+      <!-- Credit Sales -->
+      <div class="col-lg-6">
+        <div class="dashboard-card bg-success text-white">
+          <h5>Credit Sales</h5>
+          <P>UGX {{ total_credit_sales|floatformat:0}}</P>
+          <a href="{% url 'all_credit' %}" class="btn" style="width: 200px; background-color: white; color: black; font-weight: bold; text-align:center;">View credit sales</a> 
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

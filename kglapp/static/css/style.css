@@ -1,0 +1,179 @@
+/* static/css/style.css */
+
+/* General body styles */
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: #f8f9fa;
+   margin: 0;
+   padding: 0;
+   color: #333;
+   text-align: center;
+}
+
+/* Header styles */
+header {
+   background-color: #3bf30d62;
+   color: white;
+   padding: 50px 20px;
+}
+
+header h1 {
+   font-size: 2.5em;
+   margin-bottom: 10px;
+}
+
+header p {
+   font-size: 1.2em;
+}
+
+/* Features section */
+.features {
+   padding: 40px 20px;
+}
+
+.features h2 {
+   font-size: 2em;
+   margin-bottom: 20px;
+   color: hsl(138, 100%, 50%);
+}
+
+.features ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.features ul li {
+   font-size: 1.1em;
+   margin: 10px 0;
+   padding: 8px;
+}
+
+/* Footer styles */
+footer {
+   background-color: #343a40;
+   color: #ccc;
+   padding: 20px 10px;
+   font-size: 0.9em;
+   margin-top: 40px;
+}
+
+footer p {
+   margin: 5px 0;
+}
+
+
+body {
+   font-family: Arial, sans-serif;
+   margin: 20px;
+   background-color: #f9f9f9;
+}
+
+div {
+   margin-bottom: 20px;
+}
+
+input[type="submit"] {
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   padding: 8px 16px;
+   text-decoration: none;
+   margin: 4px 2px;
+   cursor: pointer;
+   border-radius: 4px;
+   transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+input[type="submit"]:hover {
+   background-color: #4627f5; /* Slightly darker green */
+}
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+   background-color: white;
+}
+
+th, td {
+   padding: 12px;
+   border: 1px solid #ddd;
+   text-align: center;
+}
+
+/* Hover effect for table rows */
+tbody tr:hover {
+   background-color: #f1f1f11e; /* Light grey when hovered */
+}
+
+th {
+   background-color: #4CAF50;
+   color: white;
+}
+
+a {
+   text-decoration: none;
+}
+
+
+
+/* static/css/style.css */
+
+/* General Page Styling */
+body {
+   font-family: Arial, sans-serif;
+   margin: 20px;
+   background-color: #f9f9f9;
+   color: #333;
+}
+
+/* Table Styling */
+table {
+   width: 100%;
+   border-collapse: collapse;
+   background-color: #fff;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 6px;
+   overflow: hidden;
+}
+
+/* Table Header */
+thead {
+   background-color: #007bff;
+   color: white;
+   text-align: left;
+}
+
+th, td {
+   padding: 12px 16px;
+   border-bottom: 1px solid #ddd;
+}
+
+th {
+   font-weight: 600;
+}
+
+/* Table Body */
+tbody tr:hover {
+   background-color: #f1f1f1;
+}
+
+/* Buttons */
+input[type="submit"] {
+   background-color: #28a745;
+   color: white;
+   border: none;
+   padding: 6px 12px;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+input[type="submit"]:hover {
+   background-color: #218838;
+}
+
+/* Optional container for centering or spacing */
+div {
+   margin-bottom: 20px;
+}

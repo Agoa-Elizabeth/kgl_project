@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sales Agent Dashboard - Karibu Groceries</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .dashboard-header {
+      margin-bottom: 30px;
+    }
+    .card-title {
+      font-size: 1.1rem;
+    }
+    .summary-card {
+      min-height: 110px;
+    }
+  </style>
+</head>
+<body>
+<div class="container py-4">
+  <h2 class="dashboard-header text-center">Sales Agent Dashboard</h2>
+
+  <!-- Summary Cards -->
+  <div class="row mb-4 text-center">
+    <div class="col-md-4 mb-3">
+      <div class="card text-white bg-success shadow summary-card">
+        <div class="card-body">
+          <h5 class="card-title">Total Sales Today</h5>
+          <h4>{{ total_sales_today|default:"0" }} UGX</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card text-white bg-primary shadow summary-card">
+        <div class="card-body">
+          <h5 class="card-title">Buyers Served</h5>
+          <h4>{{ buyers_count|default:"0" }}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card text-dark bg-warning shadow summary-card">
+        <div class="card-body">
+          <h5 class="card-title">Credit Sales</h5>
+          <h4>{{ credit_sales_total|default:"0" }} UGX</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="d-flex justify-content-center mb-4">
+    <a href="{% url 'record_sale' %}" class="btn btn-outline-success me-3">Record Produce Sale</a>
+    <a href="{% url 'record_credit_sale' %}" class="btn btn-outline-warning">Record Credit Sale</a>
+  </div>
+
+  <!-- Recent Sales Table -->
+  <div class="card shadow">
+    <div class="card-header bg-light fw-bold">Recent Sales</div>
+    <div class="card-body p-0">
+      <table class="table table-striped table-hover mb-0">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Produce</th>
+            <th scope="col">Buyer</th>
+            <th scope="col">Tonnage (kg)</th>
+            <th scope="col">Amount (UGX)</th>
+            <th scope="col">Payment Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for sale in recent_sales %}
+          <tr>
+            <td>{{ sale.date }}</td>
+            <td>{{ sale.produce_name }}</td>
+            <td>{{ sale.buyer_name }}</td>
+            <td>{{ sale.tonnage }}</td>
+            <td>{{ sale.amount }}</td>
+            <td>{{ sale.payment_type }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="6" class="text-center py-3">No recent sales recorded.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Stock Management</title>
+   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+   <link href="{% static 'css/allstock.css' %}" rel="stylesheet">
+</head>
+<body>
+   {% block content %}
+   <div>
+      <!--<a href=""><input type="Submit" value="Sell item"></a>-->
+     <!-- <button class="btn btn-primary" onclick="openAddStockModal()">Add Item</button>-->
+   </div>
+   <h1>RECORDS FOR ALL AVAILABLE STOCK</h1>
+   <table>
+      <thead>
+         <tr>
+            <th>Stock Category</th>
+            <th>Product Name</th>
+            <th>Total Quantity</th>
+            <th>Price (UGX)</th>
+            <th>Name of Supplier</th>
+            <th>Sales Agent Name</th>
+            <th>Date of Purchase</th>
+            <th>Actions</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for stock in stocks %}
+         <a href="{% url 'addstock' %}"><input type="Submit" value="Add stock"></a>
+            <tr>
+               <td>{{ stock.catergory_name }}</td>
+               <td>{{ stock.item_name }}</td>
+               <td>{{ stock.total_quantity }}</td>
+               <td>{{ stock.totalcost }}</td>
+               <td>{{ stock.supplier_name }}</td>
+               <td>{{ stock.sales_agent_name }}</td>
+               <td>{{ stock.date_of_purchase }}</td>
+               <td>
+                  <a href="{% url 'edit_stock' stock.pk %}">UPDATE</a>
+                  {% csrf_token %}
+                  <a href="{% url 'delete_stock' stock.id %}" class="btn btn-danger btn-sm">Delete</a>
+               </td>
+            </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+{% endblock %}
+<!-- Bootstrap JS (with Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

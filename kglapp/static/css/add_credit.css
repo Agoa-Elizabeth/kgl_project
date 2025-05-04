@@ -1,0 +1,90 @@
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: #f3f4f6;
+   margin: 0;
+   padding: 0;
+}
+
+.container {
+   max-width: 500px;
+   margin: 50px auto;
+   background-color: #fff;
+   padding: 30px;
+   border-radius: 10px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+   font-size: 1.5rem;
+   font-weight: 600;
+   margin-bottom: 20px;
+   color: #111827;
+}
+
+.message {
+   margin-bottom: 15px;
+   padding: 10px 15px;
+   background-color: #d1fae5;
+   color: #065f46;
+   border-radius: 5px;
+   font-size: 0.95rem;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+input, select, textarea {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #d1d5db;
+   border-radius: 6px;
+   font-size: 1rem;
+}
+
+button {
+   background-color: #3b82f6;
+   color: white;
+   padding: 10px;
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+   font-weight: 500;
+}
+
+button:hover {
+   background-color: #2563eb;
+}
+
+
+/*form*/
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+form p {
+   margin: 0;
+}
+
+form p label {
+   display: block;
+   font-weight: 500;
+   margin-bottom: 5px;
+   color: #374151;
+}
+
+form p input,
+form p select,
+form p textarea {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #d1d5db;
+   border-radius: 6px;
+   font-size: 1rem;
+   background-color: #f9fafb;
+}

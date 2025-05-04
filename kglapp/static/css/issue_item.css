@@ -1,0 +1,74 @@
+/* static/css/style.css */
+
+/* Basic Page Styling */
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color:dimgrey;
+   margin: 0;
+   padding: 40px;
+}
+
+/* Centered Form Container */
+form {
+   max-width: 500px;
+   margin: 0 auto;
+   background-color:transparent;
+   padding: 30px;
+   border-radius: 8px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   
+}
+
+/* Form Heading */
+h1 {
+   text-align: center;
+   color: #333333;
+   margin-bottom: 20px;
+}
+
+/* Submit Button */
+input[type="submit"] {
+   background-color: #007bff;
+   color: white;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   font-size: 16px;
+   cursor: pointer;
+   display: block;
+   width: 100%;
+   margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+   background-color: #0056b3;
+}
+
+/* Crispy form elements default better with spacing */
+form .form-group {
+   margin-bottom: 20px;
+}
+
+
+
+
+/* Spacing between form fields */
+form .form-group {
+   margin-bottom: 20px;  /* space between fields */
+}
+
+/* Optional: label and input styling */
+form label {
+   display: block;
+   margin-bottom: 6px;
+   font-weight: 500;
+}
+
+form input, form select, form textarea {
+   width: 100%;
+   padding: 8px 10px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+

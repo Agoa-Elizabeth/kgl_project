@@ -1,0 +1,74 @@
+
+/* General Page Styling */
+body {
+   font-family: Arial, sans-serif;
+   margin: 20px;
+   background-color: #08e940;
+   color: #333;
+}
+
+/* Table Styling */
+table {
+   width: 100%;
+   border-collapse: collapse;
+   background-color: #fff;
+   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 6px;
+   overflow: hidden;
+}
+
+/* Table Header */
+thead {
+   background-color:rgb(14, 139, 102);
+   color: white;
+   text-align: left;
+}
+
+th, td {
+   padding: 12px 16px;
+   border-bottom: 1px solid #ddd;
+}
+
+th {
+   font-weight: 600;
+}
+
+/* Table Body */
+tbody tr:hover {
+   background-color:dimgrey;
+}
+
+/* Buttons */
+input[type="submit"] {
+   background-color: #28a745;
+   color:beige;
+   border: none;
+   padding: 6px 12px;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+input[type="submit"]:hover {
+   background-color: #218838;
+}
+
+/* Optional container for centering or spacing */
+div {
+   margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+   text-align: center;
+   margin-top: 40px;
+   padding: 20px;
+   background-color: #f8f9fa;
+   color: #6c757d;
+   border-top: 1px solid #dee2e6;
+   font-size: 0.9rem;
+}
+
+footer p {
+   margin: 5px 0;
+}

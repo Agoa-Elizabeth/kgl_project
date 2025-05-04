@@ -1,0 +1,73 @@
+/* General Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: #0f0000;
+   background-image: url("../images/background.jpg");  /* adjust path if needed */
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+/* Header Section */
+header {
+   background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
+   padding: 80px 20px 40px;
+   text-align: center;
+}
+
+header h1 {
+   font-size: 3rem;
+   font-weight: bold;
+   margin-bottom: 10px;
+   color: #f8fbfd;
+}
+
+header p {
+   font-size: 1.3rem;
+   color: #00080f;
+}
+
+/* Features Section */
+.features {
+   background: rgba(255, 255, 255, 0.1);
+   padding: 60px 20px;
+   text-align: center;
+   flex-grow: 1;
+}
+
+.features h2 {
+   font-size: 2.5rem;
+   margin-bottom: 30px;
+   color: #000b16;
+}
+
+.features ul {
+   list-style: none;
+   padding: 0;
+   font-size: 1.2rem;
+   line-height: 2;
+}
+
+.features ul li::before {
+   content: "✔ ";
+   color: #28a745;
+   margin-right: 8px;
+}
+
+/* Footer */
+footer {
+   background-color: rgba(0, 0, 0, 0.7);
+   text-align: center;
+   padding: 20px;
+   font-size: 0.9rem;
+   color: #adb5bd;
+}

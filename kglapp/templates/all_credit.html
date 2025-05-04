@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+{% block content %}
+<div class="p-6">
+    <h1 class="text-2xl font-bold mb-4">Credit Sales</h1>
+    <!--{% if credits %}-->
+        <table class="w-full table-auto border border-gray-300">
+            <thead class="bg-gray-200">
+                
+                <tr>
+                    <th class="border px-4 py-2">Customer Name</th>
+                    <th class="boredr px-4 py-2">nin </th>
+                    <th class="border px-4 py-2">Product</th>
+                    <th class="border px-4 py-2">Quantity</th>
+                    <th class="border px-4 py-2">Amount</th>
+                    <th class="border px-4 py-2">Date</th>
+                    <th class="border px-4 py-2">Status</th>
+                    <!--<th class=" border px-4 py-2"> Action</th>-->
+                </tr>
+            </thead>
+            <tbody>
+                {% for credit in credits %}
+                <tr>
+                    <td class="border px-4 py-2">{{ credit.buyer_name }}</td>
+                    <td class="border px-4 py-2">{{ credit.national_id }}</td>
+                    <td class="border px-4 py-2">{{ credit.produce_name }}</td>
+                    <td class="border px-4 py-2">{{ credit.tonnage_kgs }}</td>
+                    <td class="border px-4 py-2">{{ credit.amount_due_ugx }}</td>
+                    <td class="border px-4 py-2">{{ credit.due_date }}</td>
+                    <td class="border px-4 py-2">{{ credit.status }}</td>
+                    <td>
+                        <div class="card dashboard-card text-center p-4">
+                            <h5 class="card-title"></h5>
+                            <a href="{% url 'add_credit' %}" class="btn btn-warning mt-2"></a>
+                          </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No credit sales found.</p>
+    {% endif %}
+</div>
+{% endblock %}             
+
+<footer>
+    <p>&copy; 2025 Karibu Groceries LTD</p>
+    <p>&copy; Agoa Elizabeth</p>
+</footer>
+</body>
+</html>

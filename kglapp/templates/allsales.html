@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="{% static 'css/allsales.css' %}">
+</head>
+<body>
+   {%block content%}
+   <h1>SALES RECORDS</h1>
+      <table>
+         <thead>
+            <tr>
+               <th>Product name</th>
+               <th>Quantity</th>
+               <th>Payment method</th>
+               <th>Amount recieved</th>
+               <th>Sales agent name</th>
+               <th>Receipt</th>
+            </tr>
+         </thead>
+            <tbody>
+               {% for sale in sales %}
+               <tr>
+                  <td>{{ sale.product_name }}</td>
+                  <td>{{ sale.tonnage_kgs}}</td>
+                  <td>{{ sale.payment_method }}</td>
+                  <td>{{sale.amount_recieved }}</td>
+                  <td>{{ sale.sales_agent_name }}</td>
+                  <td>
+                    <a href="{% url 'generate_receipt' sale.id %}" class="btn btn-primary btn-sm">Generate Receipt</a>
+                  </td>
+               </tr>
+               {% endfor %}
+            </tbody>
+            
+         
+      </table>
+   {% endblock content %}
+</body>
+</html>

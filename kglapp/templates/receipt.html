@@ -1,0 +1,29 @@
+<!-- receipt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      .receipt { border: 1px solid #000; padding: 20px; width: 500px; }
+  </style>
+</head>
+<body>
+   <div class="receipt">
+      <h2>Karibu Groceries Ltd</h2>
+      <h3>Sales Receipt</h3>
+      <p><strong>Name:</strong> {{ sale.customer_name }}</p>
+      <p><strong>Product:</strong> {{ sale.product_name }}</p>
+      <p><strong>Quantity:</strong> {{ sale.tonnage_kgs }}</p>
+      <p><strong>Payment Method:</strong> {{ sale.payment_method }}</p>
+      <p><strong>Amount Received:</strong> {{ sale.amount_recieved }}</p>
+      <p><strong>Sales Agent:</strong> {{ sale.sales_agent_name }}</p>
+      <p><strong>Date:</strong> {{ sale.date_time}}</p> <!-- if you have a created_at field -->
+  </div>
+  <!-- onclick="return confirm(Are you sure you want to delete this product?)"-->
+  <br>
+  <button onclick="window.print()">Print Receipt</button>
+</body>
+</html>

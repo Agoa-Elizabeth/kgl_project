@@ -1,0 +1,79 @@
+/* General Page Styling */
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: #2d9205;
+   color: #0a0000f8;
+   line-height: 1.6;
+   padding-bottom: 60px; /* Prevent overlap with footer */
+ }
+ 
+ /* Header */
+ h3, h4 {
+   font-weight:bolder;
+   color: #000a03e8;
+   margin-bottom: 20px;
+   font-style: oblique;
+   text-align: center;
+   font-size:x-large;
+
+ }
+ 
+ /* Form Section */
+ form {
+   background: #ffffff;
+   padding: 25px;
+   border-radius: 12px;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+   margin-bottom: 40px;
+   text-align: center;
+   border: 1px solid #ccc;
+   margin: 0 auto;
+   max-width: 700px;
+   
+   
+ }
+
+ .btn-success {
+   background-color: #0e9b2a;
+   border-color: #058f21;
+   transition: 0.3s ease;
+ }
+ 
+ .btn-success:hover {
+   background-color: #18af9b;
+   border-color: #11a041;
+   box-sizing: border-box;
+   
+ }
+ 
+ /* Table Styling */
+ table.table {
+   background-color: white;
+   border-radius: 10px;
+   overflow: hidden;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+   align-items: center;
+ }
+ 
+ .table thead th {
+   background-color: #56be70;
+   color: #010e07;
+ }
+ 
+ .table tbody tr:hover {
+   background-color: #08f070;
+ }
+ 
+ /* Footer Styling */
+ footer {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   background-color: #e9f5ef;
+   color: #000804;
+   text-align: center;
+   padding: 10px 0;
+   border-top: 1px solid #cce3d4;
+   font-size: 14px;
+ }
+ 

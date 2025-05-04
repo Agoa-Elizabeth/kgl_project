@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Outstanding Credit Balances</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/dashboard1.css' %}" rel="stylesheet">
+    </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Karibu Groceries - Mr. OBARN</a>
+            <div>
+                <a class="btn btn-outline-light" href="{% url 'logout' %}">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Outstanding Credit Balances</h1>
+        {% if outstanding_credits %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Amount Due</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    {% for credit in outstanding_credits %}
+                        <tr>
+                            <td>{{ credit.customer }}</td>
+                            <td>${{ credit.amount }}</td>
+                            </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No outstanding credits at the moment.</p>
+        {% endif %}
+
+        <div class="mt-4">
+            <a href="{% url 'owner_dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    </body>
+</html>
