@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: kgl-project
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn kglproject.wsgi:application"
+    envVars:
+      - key: DEBUG
+        value: false
+      - key: PYTHON_VERSION
+        value: 3.13.4
