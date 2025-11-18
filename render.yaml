@@ -2,7 +2,7 @@ services:
   - type: web
     name: kgl-project
     env: python
-    buildCommand: "./build.sh"
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate"
     startCommand: "gunicorn kglproject.wsgi:application"
     envVars:
       - key: DEBUG
