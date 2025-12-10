@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'kglproject.wsgi.application'
+WSGI_APPLICATION = 'kgl_project.wsgi.application'
 
 
 # Database
