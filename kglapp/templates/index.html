@@ -1,79 +1,83 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
-<title>Welcome to Karibu Groceries</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="icon" href="{% static 'images/logo-1.png' %}" type="image/png" />
+    <title>Welcome to Karibu Groceries</title>
 
-<!-- templates/landing.html -->
-</head>
-<body>
+    <!-- templates/landing.html -->
+  </head>
+  <body>
     <div class="logo-container">
-        <img src="/static/images/logo-1.png/" alt="logo" width="400px" height="250px">
-        <br>
-        <br>
-        <h3 style="text-align: center;">
-            KARIBU GROCERIES LTD
-        </h3>
-        <div style="text-align: center;">
-            <a href="{% url 'login' %}" class="btn-login">Login</a>
-            
-        </div>
+      <img
+        src="/static/images/logo-1.png/"
+        alt="logo"
+        width="400px"
+        height="250px"
+      />
+      <br />
+      <br />
+      <h3 style="text-align: center">KARIBU GROCERIES LTD</h3>
+      <div style="text-align: center">
+        <a href="{% url 'login' %}" class="btn-login">Login</a>
+      </div>
     </div>
-   
-  
 
     {% load static %}
 
-    
-    
     <style>
-        .btn-login {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #91D049;
-            color: white;
-            border-radius: 4px;
-            font-weight: bold;
-            margin: 4rem 0;
-            text-align: center;
-        }
-        
-        .btn-login:hover {
-            background-color: #45a049;
-        }
-        /* Footer styling */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color:#7fad4b;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
+      .btn-login {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #91d049;
+        color: white;
+        border-radius: 4px;
+        font-weight: bold;
+        margin: 4rem 0;
+        text-align: center;
+      }
 
-/* Center the logo in the middle */
-.logo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+      .btn-login:hover {
+        background-color: #45a049;
+      }
+      /* Footer styling */
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #7fad4b;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      /* Center the logo in the middle */
+      .logo-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     </style>
 
     <footer>
-
-        <p>&copy; 2025 Karibu Groceries LTD, Agoa Elizabeth</p>
+      <p>&copy; 2025 Karibu Groceries LTD, Agoa Elizabeth</p>
     </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  </body>
 </html>

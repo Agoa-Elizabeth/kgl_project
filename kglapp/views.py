@@ -18,7 +18,8 @@ from django.contrib import messages
 
 #borrowing decorators from django so that we can retrict viws
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth import logout, authenticate
+from django.contrib.auth import login as auth_login
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.timezone import now
@@ -57,9 +58,9 @@ def allsales(request):
     sales = Sale.objects.all().order_by('-id')
     return render(request, 'allsales.html', {'sales': sales})
 
-def stock_detail(request, stock_id):
+def stock_detail(request, id):
     # Get the stock item by its ID
-    stock = Stock.objects.get(id=stock_id)
+    stock = Stock.objects.get(id=id)
     return render(request, 'stock_detail.html', {'stock': stock})
 
 
@@ -69,7 +70,7 @@ def issue_item(request, pk=None):  # Make pk optional
         issued_item = get_object_or_404(Stock, pk=pk)
     else:
         # Handle case where no item is selected (redirect or show form)
-        return redirect('some_other_view')  # Or render a different template
+        return redirect('allstock')  # Redirect to stock list
 
     if request.method == 'POST':
         sales_form = AddSaleForm(request.POST)
@@ -130,28 +131,31 @@ def add_credit(request):
 
 
 #login view
-def login(request):
-    user=None
-    if request.method =='POST':
-        username = request.POST['username']
-        password =request.POST['password']
-        #checking the logging in user
-        user = authenticate(request, username=username, password=password)
-        if user is not None and user.is_salesagent == True:
-            login(request, user)
-            return redirect('/dasboard3')
-        
-        #checking for wheather someone is the owner
-        if user is not None and user.is_manager == True:
-            login(request, user)
-            return redirect('/dasboard2')
+def user_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                if user.is_salesagent:
+                    auth_login(request, user)
+                    return redirect('dashboard3')
+                elif user.is_manager:
+                    auth_login(request, user)
+                    return redirect('dashboard2')
+                elif user.is_owner:
+                    auth_login(request, user)
+                    return redirect('dashboard1')
+                else:
+                    messages.error(request, 'Your account does not have the required permissions.')
+            else:
+                messages.error(request, 'Invalid username or password.')
         else:
-         print('user not found')
-        
-         if user is not None and user.is_owner == True:
-            login(request, user)
-            return redirect('/dasboard1')
-    form = AuthenticationForm()
+            messages.error(request, 'Invalid form submission.')
+    else:
+        form = AuthenticationForm()
     return render(request, 'login.html', {'form': form, 'title': 'Login'})
 
 def manager(request):
