@@ -24,6 +24,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('favicon.ico', serve, {'document_root': settings.STATIC_ROOT, 'path': 'images/logo-1.png'}),
+    path('static/css/bootstrap.min.css', serve, {'document_root': settings.STATICFILES_DIRS[0], 'path': 'bootstrap-5.3.3-dist/css/bootstrap.min.css'}),
+    path('static/css/bootstrap.min.js', serve, {'document_root': settings.STATICFILES_DIRS[0], 'path': 'bootstrap-5.3.3-dist/js/bootstrap.min.js'}),
     path('admin/', admin.site.urls),
 
     path('', views.index, name='index'),

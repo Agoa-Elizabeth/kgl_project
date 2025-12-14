@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
     <style>
       /* Full-page styling */
@@ -96,5 +100,22 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#id_password').parent().css('position', 'relative');
+        $('#id_password').css('padding-right', '35px');
+        $('#id_password').after('<i id="togglePassword" class="fa fa-eye" style="position:absolute;right:12px;top:calc(50% + 2px);transform:translateY(-50%);cursor:pointer;color:#6c757d;"></i>');
+        $('#togglePassword').click(function() {
+          const passwordField = $('#id_password');
+          if (passwordField.attr('type') === 'password') {
+            passwordField.attr('type', 'text');
+            $(this).removeClass('fa-eye').addClass('fa-eye-slash');
+          } else {
+            passwordField.attr('type', 'password');
+            $(this).removeClass('fa-eye-slash').addClass('fa-eye');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
